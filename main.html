@@ -8,8 +8,6 @@
 <body>
 
 <script>
-  function openLinks() {
-    // Replace 'link1' and 'link2' with your actual URLs
     var list = [
       'https://www.bing.com/search?q=Natalie+Portman&FORM=SNAPST&filters=sid:%22d952b1af-cf84-9804-8daa-9f207238bae7%22+fcid:%22f34866e0-993d-ca64-05e6-190cf36d8def%22+fccat:%222%22',
       'https://www.bing.com/search?q=Marisa+Tomei&FORM=SNAPST&filters=sid:%22ce7e49f9-5e17-0e71-ffe1-d406b979fcf9%22+fcid:%22f34866e0-993d-ca64-05e6-190cf36d8def%22+fccat:%222%22&crslsl=0&efirst=1',
@@ -46,13 +44,19 @@
       'https://www.bing.com/search?pglt=131&q=cat&cvid=7c36a3d1832f4c5d803d049247e3fddf&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQLhhAMgYIAhAAGEAyBggDEAAYQDIGCAQQABhAMgYIBRAAGEAyBggGEAAYQDIGCAcQABhAMgYICBAAGEDSAQgxMTEyajBqMagCALACAA&FORM=ANNTA1&PC=HCTS'
     ]
     
-    for(i of list){
-      window.open(i, '_blank')
-    }
-  }
 
-  // Call the function when the page loads
-  window.onload = openLinks;
+    function openWindowsWithDelay(list) {
+  list.forEach((url, index) => {
+    setTimeout(() => {
+      window.open(url, '_blank');
+    }, index * 15000); // 10000 milliseconds = 10 seconds
+  });
+}
+
+// Example usage:
+
+openWindowsWithDelay(list);
+ 
 </script>
 
 </body>
